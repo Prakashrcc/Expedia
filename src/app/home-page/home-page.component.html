@@ -235,14 +235,14 @@
                     </div>
                     <div class="places-container">
                       
-                      <div class="row no-margin search-item"  *ngFor='let place of tempPlaces;'>
+                      <div class="row no-margin search-item"  *ngFor='let place of autoSuggestData;'>
                         <div class="row no-margin div-item" (click)="selectPlace($event,place)">
                           <div class="icon-cont" >
                             <i class="fa fa-map-marker " aria-hidden="true" style="margin:auto;"></i>
                           </div>
                           <div class="name-cont">
-                            <span>{{ place.name }}</span><br>
-                            <span class="small-text">{{place.state}}</span>
+                            <span>{{ place.cn }}</span><br>
+                            <span class="small-text">{{place.c}}</span>
                           </div>
                         </div>
                         
