@@ -2,7 +2,7 @@
     <div class="row">
         <div class="row main-container" *ngFor='let activity of activityData;'>
             <div class="pic-container">
-                <img src="https://hare-media-cdn.tripadvisor.com/media/attractions-splice-spp-154x109/07/2a/69/38.jpg">
+                <img src="{{activity.content.media.primaryImage.url}}">
             </div>
             <div class="body-container">
                 <div class="row">
@@ -20,7 +20,7 @@
                     <span>{{activity.content.summary}}</span>
                 </div>
                 <div class="row">
-                    <span>{{activity.content.duration}}</span>
+                    <span>Duration - {{activity.content.duration}}</span>
                 </div>
             </div>
         </div>
