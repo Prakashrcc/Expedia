@@ -41,7 +41,7 @@ export class HomePageComponent implements OnInit {
   navigateToActivity() {
     console.log('in navigate'+this.activityStartDate);
     
-    this.route.navigate(['/activity'],{ queryParams: {lat: 37,long:50, from: this.activityStartDate, to : this.activityEndDate}});
+    this.route.navigate(['/activity'],{ queryParams: {lat: this.selectedPlace.lat,long:this.selectedPlace.lng, from: this.activityStartDate, to : this.activityEndDate}});
   }
 
   getAutosuggest(event){
