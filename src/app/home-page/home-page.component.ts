@@ -21,7 +21,7 @@ export class HomePageComponent implements OnInit {
   searchComponent;
   places: Place[] = placesList;  
   tempPlaces: Place[] = placesList;
-  selectedPlace: Place = null;
+  selectedPlace = null;
   activityStartDate:String ;
   activityEndDate:String ;
   public autoSuggestData :any[] = [] ;
@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
     public autosearchService: AutoSuggestService) { 
     console.log(JSON.stringify(this.tempPlaces));
     this.selectedPlace= {
-      id : '', name : '',state:'',
+      id : '', name : '',state:'', lat: 1, lng : 1
     }
     this.selectedPlace.name = 'Going to';
   }
@@ -103,7 +103,9 @@ export class HomePageComponent implements OnInit {
 
   selectPlace(event,place) {
     console.log('i m here');
-    this.selectedPlace = place;
+    this.selectedPlace.lat = place.lat;
+    this.selectedPlace.lng = place.lng;
+    this.selectedPlace.name = place.cn;
     this.searchComponent.style.display = 'none';
     console.log(this.selectedPlace);
   }
