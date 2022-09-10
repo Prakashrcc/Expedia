@@ -23,6 +23,9 @@ export class ActivityComponent implements OnInit {
     console.warn('in activity component');
     this.route.queryParams.subscribe(params => {
       this.lat = params['lat'];
+      this.long = params['lng'];
+      this.from = params['from'];
+      this.to = params['to'];
     });
     console.warn(this.lat);
     this.getActivity();
